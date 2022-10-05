@@ -18,7 +18,7 @@ static void lightServiceTask(void * pvParameters);
 uint8_t initLightService(void) {
     /* USER CODE BEGIN */
     // Create the task and queue here.
-
+    xReturnedLightService = xTaskCreate(lightServiceTask, LIGHT_SERVICE_NAME, LIGHT_SERVICE_STACK_SIZE, NULL, LIGHT_SERVICE_PRIORITY, &lightServiceTask);
     /* USER CODE END */
     return 1;
 }
